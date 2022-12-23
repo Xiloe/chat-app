@@ -10,8 +10,7 @@ export const PocketBaseInit = () => {
   pb.authStore.onChange((auth) => {
     dispatch(setToken(auth));
     dispatch(setUserModel(pb.authStore.model));
-    console.log(`Token changed: ${auth}`);
-    console.log(`Model changed: ${pb.authStore.model}`);
+    console.log(`Auth store change : ${auth}`);
   });
 
   return null;

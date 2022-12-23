@@ -34,6 +34,7 @@ export const Login = () => {
     <form
       onSubmit={async (e) => {
         e.preventDefault();
+        login();
       }}
       className="flex flex-col justify-center items-center [&>*]:w-full [&>*]:m-2"
     >
@@ -42,7 +43,7 @@ export const Login = () => {
       <input type="password" ref={passwordRef} placeholder="Password" />
 
       <div className="flex [&>*]:grow">
-        <button onClick={() => login()} className="mr-2">
+        <button type="submit" className="mr-2">
           Login
         </button>
         <button onClick={() => signup()}>Register</button>

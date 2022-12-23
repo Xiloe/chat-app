@@ -1,10 +1,8 @@
 import React, { useEffect, useState, useRef } from "react";
-import { useSelector } from "react-redux";
 import { pb } from "./PocketBaseInit";
 
 export const Messages = () => {
   const [messages, setMessages] = useState([]);
-  const { userModel } = useSelector((state) => state.user);
   const messageRef = useRef();
 
   let ranOnce = false;
@@ -81,7 +79,7 @@ export const Messages = () => {
           <p className="text-xs text-slate-500">
             Sent by {message.expand.user.username} ({message.expand.user.id})
           </p>
-          {userModel.id === message.expand.user.id && (
+          {pb.authStore.model.id === message.expand.user.id && (
             <button
               onClick={() => deleteMessage(message.id)}
               className="bg-red-500 hover:bg-red-700 mt-5 w-full"

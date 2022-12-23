@@ -10,7 +10,6 @@ export const Messages = () => {
   let ranOnce = false;
 
   useEffect(() => {
-    console.log("Messages ranOnce: ", ranOnce);
     let unsubscribe;
 
     const init = async () => {
